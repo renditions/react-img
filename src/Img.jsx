@@ -6,6 +6,7 @@ const Img = ({
   getSrc,
   renditions,
   breakpoints = [],
+  autoSortRenditions = false,
   autoSortBreakpoints = false,
   width = '100vw',
   ...rest
@@ -13,7 +14,9 @@ const Img = ({
   // create a copy of renditions array for in-place transforms
   const renditionsConfig = renditions.slice(0)
 
-  sortRenditions(renditionsConfig)
+  if (autoSortRenditions) {
+    sortRenditions(renditionsConfig)
+  }
 
   renditionsConfig.forEach(rendition => {
     rendition.src = getSrc(rendition)

@@ -126,8 +126,6 @@ HTML:
 
 ### Sort Order
 
-The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order.
+The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order. Likewise, the `renditions` prop is expected to be an array sorted by `width` in _ascending_ order.
 
-To sort these automatically, you can set the `autoSortBreakpoints` boolean prop.
-
-Note: the `renditions` will always be sorted automatically. These are sorted by `width` in _ascending_ order.
+To sort these automatically, you can set the `autoSortBreakpoints` and `autoSortRenditions` boolean props.
