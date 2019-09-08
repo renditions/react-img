@@ -60,7 +60,7 @@ HTML:
 ```html
 <img
   src="/images/oranges_320.jpg"
-  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
+  srcset="/images/oranges_320.jpg 320w, /images/oranges_768.jpg 768w, /images/oranges_1280.jpg 1280w"
   sizes="100vw"
   alt="Oranges in a bowl."
 >
@@ -83,7 +83,7 @@ HTML:
 ```html
 <img
   src="/images/oranges_320.jpg"
-  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
+  srcset="/images/oranges_320.jpg 320w, /images/oranges_768.jpg 768w, /images/oranges_1280.jpg 1280w"
   sizes="50vw"
   alt="Oranges in a bowl."
 >
@@ -118,8 +118,8 @@ HTML:
 ```html
 <img
   src="/images/oranges_320.jpg"
-  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
-  sizes="(min-width: 960px) 100vw,(min-width: 480px) 50vw,50vw"
+  srcset="/images/oranges_320.jpg 320w, /images/oranges_768.jpg 768w, /images/oranges_1280.jpg 1280w"
+  sizes="(min-width: 960px) 100vw, (min-width: 480px) 50vw, 100vw"
   alt="Oranges in a bowl."
 >
 ```
@@ -130,4 +130,4 @@ The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _
 
 To sort these automatically, you can set the `autoSortBreakpoints` boolean prop.
 
-Note: the `renditions` will always be sorted automatically by `width` in _ascending_ order.
+Note: the `renditions` will always be sorted automatically. These are sorted by `width` in _ascending_ order.
