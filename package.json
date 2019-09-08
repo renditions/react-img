@@ -1,0 +1,39 @@
+{
+  "name": "@renditions/react-img",
+  "version": "0.0.1",
+  "description": "Responsive image component for React with nice abstractions over srcset, sizes and src attributes.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "scripts": {
+    "test": "standard",
+    "compile": "npm run compile:cjs && npm run compile:esm",
+    "compile:cjs": "BABEL_MODULE_TYPE=commonjs babel src --out-dir dist/cjs",
+    "compile:esm": "BABEL_MODULE_TYPE=esm babel src --out-dir dist/esm",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renditions/react-img.git"
+  },
+  "author": "Stef <stef@srilq.email>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/renditions/react-img/issues"
+  },
+  "homepage": "https://renditions.dev",
+  "peerDependencies": {
+    "react": "16.x.x"
+  },
+  "dependencies": {
+    "@renditions/get-sizes": "^2.1.0",
+    "@renditions/get-srcset": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "react": "^16.9.0",
+    "standard": "^14.1.0"
+  }
+}
