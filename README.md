@@ -37,11 +37,12 @@ const getSrc = (filename, ext, rendition) => {
 Define your `Image` component:
 
 ```jsx
-const Image = ({ filename, ext, alt }) => (
+const Image = ({ filename, ext, alt, ...rest }) => (
   <Img
     getSrc={getSrc.bind(null, filename, ext)}
     renditions={renditions}
     alt={alt}
+    {...rest}
   >
 )
 ```
@@ -71,19 +72,6 @@ The `sizes` attribute defaults to a value of `100vw`. Read more about the [sizes
 
 To change the `sizes` attribute you can provide a `width` prop.
 
-```jsx
-const Image = ({ filename, ext, alt, width = '100vw' }) => (
-  <Img
-    getSrc={getSrc.bind(null, filename, ext)}
-    renditions={renditions}
-    width={width}
-    alt={alt}
-  >
-)
-```
-
-Here's what this component renders to the DOM:
-
 JSX:
 
 ```html
@@ -107,7 +95,7 @@ To specify different `sizes` for different viewport widths, you can provide a `b
 
 JSX:
 
-```html
+```jsx
 <Image
   filename="oranges"
   ext="jpg"
@@ -138,7 +126,7 @@ HTML:
 
 ### Sort Order
 
-The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order. For example:
+The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order.
 
 To sort these automatically, you can set the `autoSortBreakpoints` boolean prop.
 
