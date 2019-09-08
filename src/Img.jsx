@@ -5,7 +5,8 @@ import getSrcset, { sortRenditions } from '@renditions/get-srcset'
 const Img = ({
   getSrc,
   renditions,
-  breakpoints,
+  breakpoints = [],
+  autoSortBreakpoints = false,
   width = '100vw',
   ...rest
 }) => {
@@ -22,7 +23,7 @@ const Img = ({
     <img
       src={getSrc(renditionsConfig[0])}
       srcSet={getSrcset(renditionsConfig)}
-      sizes={getSizes({ width, breakpoints })}
+      sizes={getSizes({ width, breakpoints }, autoSortBreakpoints)}
       {...rest}
     />
   )

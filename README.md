@@ -10,7 +10,7 @@ Responsive image component for React with nice abstractions over srcset, sizes a
 npm install @renditions/react-img
 ```
 
-## Example Usage
+## Usage
 
 Import `react` and `@renditions/react-img`:
 
@@ -64,3 +64,82 @@ HTML:
   alt="Oranges in a bowl."
 >
 ```
+
+### Sizes
+
+The `sizes` attribute defaults to a value of `100vw`. Read more about the [sizes attribute here](https://devdocs.io/html/element/img).
+
+To change the `sizes` attribute you can provide a `width` prop.
+
+```jsx
+const Image = ({ filename, ext, alt, width = '100vw' }) => (
+  <Img
+    getSrc={getSrc.bind(null, filename, ext)}
+    renditions={renditions}
+    width={width}
+    alt={alt}
+  >
+)
+```
+
+Here's what this component renders to the DOM:
+
+JSX:
+
+```html
+<Image filename="oranges" ext="jpg" width="50vw" alt="Oranges in a bowl.">
+```
+
+HTML:
+
+```html
+<img
+  src="/images/oranges_320.jpg"
+  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
+  sizes="50vw"
+  alt="Oranges in a bowl."
+>
+```
+
+### Breakpoints
+
+To specify different `sizes` for different viewport widths, you can provide a `breakpoints` prop.
+
+JSX:
+
+```html
+<Image
+  filename="oranges"
+  ext="jpg"
+  width="100vw"
+  breakpoints={[
+    {
+      mediaMinWidth: '960px',
+      width: '100vw'
+    },
+    {
+      mediaMinWidth: '480px',
+      width: '50vw'
+    }
+  ]}
+  alt="Oranges in a bowl.">
+```
+
+HTML:
+
+```html
+<img
+  src="/images/oranges_320.jpg"
+  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
+  sizes="(min-width: 960px) 100vw,(min-width: 480px) 50vw,50vw"
+  alt="Oranges in a bowl."
+>
+```
+
+### Sort Order
+
+The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order. For example:
+
+To sort these automatically, you can set the `autoSortBreakpoints` boolean prop.
+
+Note: the `renditions` will always be sorted automatically by `width` in _ascending_ order.
