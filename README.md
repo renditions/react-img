@@ -22,7 +22,7 @@ import Img from '@renditions/react-img'
 Define a renditions configuration:
 
 ```jsx
-const renditionWidths = ['100', '200', '320', '400', '640', '768', '1024', '1280', '1920']
+const renditionWidths = ['320', '768', '1280']
 const renditions = renditionWidths.map(width => ({ width }))
 ```
 
@@ -44,4 +44,23 @@ const Image = ({ filename, ext, alt }) => (
     alt={alt}
   >
 )
+```
+
+Here's what this component renders to the DOM:
+
+JSX:
+
+```html
+<Image filename="oranges" ext="jpg" alt="Oranges in a bowl.">
+```
+
+HTML:
+
+```html
+<img
+  src="/images/oranges_320.jpg"
+  srcset="/images/oranges_320.jpg 320w,/images/oranges_768.jpg 768w,/images/oranges_1280.jpg 1280w"
+  sizes="100vw"
+  alt="Oranges in a bowl."
+>
 ```
