@@ -27,9 +27,9 @@ const renditions = renditionWidths.map(width => ({ width }))
 Define a `getSrc` function that return a source URL for a given rendition:
 
 ```jsx
-const getSrc = (filename, ext, rendition) => (
-  `/images/${filename}_${rendition.width}.${ext}`
-)
+const getSrc = (filename, ext, rendition) => {
+  return `/images/${filename}_${rendition.width}.${ext}`
+}
 ```
 
 Define your `Image` component:
