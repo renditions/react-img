@@ -35,5 +35,14 @@
     "@babel/preset-react": "^7.0.0",
     "react": "^16.9.0",
     "standard": "^14.1.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "srcset",
+    "sizes",
+    "image",
+    "images",
+    "responsive images",
+    "responsive image"
+  ]
 }
