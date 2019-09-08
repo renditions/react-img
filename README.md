@@ -1,5 +1,7 @@
 # @renditions/react-img
 
+[![npm version](https://img.shields.io/npm/v/@renditions/react-img.svg?style=flat-square)](https://www.npmjs.com/package/@renditions/react-img) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/feross/standard)
+
 Responsive image component for React with nice abstractions over srcset, sizes and src attributes.
 
 ## Install
@@ -24,7 +26,7 @@ const renditionWidths = ['100', '200', '320', '400', '640', '768', '1024', '1280
 const renditions = renditionWidths.map(width => ({ width }))
 ```
 
-Define a `getSrc` function that return a source URL for a given rendition:
+Define a `getSrc` function that returns the source URL for a given rendition:
 
 ```jsx
 const getSrc = (filename, ext, rendition) => {
