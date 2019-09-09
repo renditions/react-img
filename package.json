@@ -25,8 +25,8 @@
     "react": "16.x.x"
   },
   "dependencies": {
-    "@renditions/get-sizes": "^2.1.0",
-    "@renditions/get-srcset": "^1.0.0"
+    "@renditions/get-sizes": "^2.1.1",
+    "@renditions/get-srcset": "^1.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.0",
