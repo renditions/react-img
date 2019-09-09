@@ -22,8 +22,11 @@ import Img from '@renditions/react-img'
 Define a renditions configuration:
 
 ```jsx
-const renditionWidths = ['320', '768', '1280']
-const renditions = renditionWidths.map(width => ({ width }))
+const renditions = [
+  { width: '320' },
+  { width: '768' },
+  { width: '1280' }
+]
 ```
 
 Define a `getSrc` function that returns the source URL for a given rendition:
