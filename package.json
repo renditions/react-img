@@ -1,6 +1,6 @@
 {
   "name": "@renditions/react-img",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Responsive image component for React with nice abstractions over srcset, sizes and src attributes.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
