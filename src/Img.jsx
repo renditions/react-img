@@ -8,7 +8,7 @@ const Img = ({
   breakpoints = [],
   autoSortRenditions = false,
   autoSortBreakpoints = false,
-  width = '100vw',
+  size = '100vw',
   ...rest
 }) => {
   // create a copy of renditions array for in-place transforms
@@ -26,7 +26,7 @@ const Img = ({
     <img
       src={getSrc(renditionsConfig[0])}
       srcSet={getSrcset(renditionsConfig)}
-      sizes={getSizes({ width, breakpoints }, autoSortBreakpoints)}
+      sizes={getSizes({ size, breakpoints }, autoSortBreakpoints)}
       {...rest}
     />
   )
