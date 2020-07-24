@@ -73,12 +73,12 @@ HTML:
 
 The `sizes` attribute defaults to a value of `100vw`. Read more about the [sizes attribute here](https://devdocs.io/html/element/img).
 
-To change the `sizes` attribute you can provide a `width` prop.
+To change the `sizes` attribute you can provide `size` and `breakpoints` props. Here's an example using the `size` prop only:
 
 JSX:
 
 ```html
-<Image filename="oranges" ext="jpg" width="50vw" alt="Oranges in a bowl.">
+<Image filename="oranges" ext="jpg" size="50vw" alt="Oranges in a bowl.">
 ```
 
 HTML:
@@ -102,15 +102,15 @@ JSX:
 <Image
   filename="oranges"
   ext="jpg"
-  width="100vw"
+  size="100vw"
   breakpoints={[
     {
       mediaMinWidth: '960px',
-      width: '100vw'
+      size: '100vw'
     },
     {
       mediaMinWidth: '480px',
-      width: '50vw'
+      size: '50vw'
     }
   ]}
   alt="Oranges in a bowl.">
