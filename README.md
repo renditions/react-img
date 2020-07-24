@@ -42,8 +42,8 @@ Define your `Image` component:
 ```jsx
 const Image = ({ filename, ext, alt, ...rest }) => (
   <Img
-    getSrc={getSrc.bind(null, filename, ext)}
     renditions={renditions}
+    getSrc={getSrc.bind(null, filename, ext)}
     alt={alt}
     {...rest}
   >
@@ -132,3 +132,9 @@ HTML:
 The `breakpoints` prop is expected to be an array sorted by `mediaMinWidth` in _descending_ order. Likewise, the `renditions` prop is expected to be an array sorted by `width` in _ascending_ order.
 
 To sort these automatically, you can set the `autoSortBreakpoints` and `autoSortRenditions` boolean props.
+
+## See Also
+
+* [@renditions/react-picture-source](https://github.com/renditions/react-picture-source)
+* [@renditions/get-sizes](https://github.com/renditions/get-sizes)
+* [@renditions/get-srcset](https://github.com/renditions/get-srcset)

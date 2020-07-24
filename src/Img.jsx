@@ -5,10 +5,10 @@ import getSrcset, { sortRenditions } from '@renditions/get-srcset'
 const Img = ({
   getSrc,
   renditions,
+  size = '100vw',
   breakpoints = [],
   autoSortRenditions = false,
   autoSortBreakpoints = false,
-  size = '100vw',
   ...rest
 }) => {
   // create a copy of renditions array for in-place transforms
