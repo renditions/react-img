@@ -64,16 +64,17 @@ HTML:
 <img
   src="/images/oranges_320.jpg"
   srcset="/images/oranges_320.jpg 320w, /images/oranges_768.jpg 768w, /images/oranges_1280.jpg 1280w"
-  sizes="100vw"
   alt="Oranges in a bowl."
 >
 ```
 
 ### Sizes
 
-The `sizes` attribute defaults to a value of `100vw`. Read more about the [sizes attribute here](https://devdocs.io/html/element/img).
+By default, the `sizes` attribute is omitted. Not specifying this attribute can lead to the browser loading unnecessarily large images.
 
-To change the `sizes` attribute you can provide `size` and `breakpoints` props. Here's an example using the `size` prop only:
+Read more about the [sizes attribute here](https://devdocs.io/html/element/img).
+
+To render the `sizes` attribute you can provide `size` and `breakpoints` props. Here's an example using the `size` prop only:
 
 JSX:
 
@@ -94,7 +95,7 @@ HTML:
 
 ### Breakpoints
 
-To specify different `sizes` for different viewport widths, you can provide a `breakpoints` prop.
+To specify different sizes for different viewport widths, you can provide a `breakpoints` prop.
 
 JSX:
 

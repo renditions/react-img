@@ -5,7 +5,7 @@ import getSrcset, { sortRenditions } from '@renditions/get-srcset'
 const Img = ({
   getSrc,
   renditions,
-  size = '100vw',
+  size = null,
   breakpoints = [],
   autoSortRenditions = false,
   autoSortBreakpoints = false,
