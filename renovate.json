@@ -1,0 +1,3 @@
+{
+  "extends": ["github>renditions/renovate-config"]
+}
