@@ -29,10 +29,10 @@
     "@renditions/get-srcset": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.12.10",
-    "@babel/core": "7.12.10",
-    "@babel/preset-env": "7.12.11",
-    "@babel/preset-react": "7.12.10",
+    "@babel/cli": "7.12.13",
+    "@babel/core": "7.12.13",
+    "@babel/preset-env": "7.12.13",
+    "@babel/preset-react": "7.12.13",
     "react": "17.0.1",
     "standard": "16.0.3"
   },
