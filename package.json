@@ -31,7 +31,7 @@
   "devDependencies": {
     "@babel/cli": "7.13.0",
     "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.0",
+    "@babel/preset-env": "7.13.5",
     "@babel/preset-react": "7.12.13",
     "react": "17.0.1",
     "standard": "16.0.3"
