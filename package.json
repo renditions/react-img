@@ -20,12 +20,12 @@
     "type": "git",
     "url": "git+https://github.com/renditions/react-img.git"
   },
-  "author": "Stef <stef@srilq.email>",
+  "author": "Stef Jones <stef@srilq.email>",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/renditions/react-img/issues"
   },
-  "homepage": "https://renditions.dev",
+  "homepage": "https://github.com/renditions/react-img#readme",
   "peerDependencies": {
     "react": "16.x.x || 17.x"
   },
