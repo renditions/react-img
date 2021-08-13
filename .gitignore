@@ -1,6 +1,5 @@
 /node_modules
-/coverage
-.DS_Store
-.env*
-npm-debug.log*
-dist
+
+*.d.ts
+Img.dist.js
+Img.dist.min.js

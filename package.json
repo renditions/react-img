@@ -2,14 +2,19 @@
   "name": "@renditions/react-img",
   "version": "5.0.0",
   "description": "Responsive image component for React with nice abstractions over srcset, sizes and src attributes.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "Img.dist.js",
+  "browser": "Img.dist.min.js",
+  "types": "Img.d.ts",
+  "files": [
+    "Img.dist.js",
+    "Img.dist.min.js",
+    "Img.d.ts",
+    "Img.tsx"
+  ],
   "scripts": {
-    "test": "standard",
-    "compile": "npm run compile:cjs && npm run compile:esm",
-    "compile:cjs": "BABEL_MODULE_TYPE=commonjs babel src --out-dir dist/cjs",
-    "compile:esm": "BABEL_MODULE_TYPE=esm babel src --out-dir dist/esm",
-    "prepublish": "npm run compile"
+    "prepare": "./build.sh",
+    "test": "npm run lint",
+    "lint": "eslint *.ts *.tsx"
   },
   "repository": {
     "type": "git",
@@ -25,16 +30,22 @@
     "react": "16.x.x || 17.x"
   },
   "dependencies": {
-    "@renditions/get-sizes": "^3.0.0",
-    "@renditions/get-srcset": "^1.0.1"
+    "@renditions/get-sizes": "^3.1.1",
+    "@renditions/get-srcset": "^1.1.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.14.8",
-    "@babel/core": "7.15.0",
-    "@babel/preset-env": "7.15.0",
-    "@babel/preset-react": "7.14.5",
+    "@types/react": "^17.0.17",
+    "@typescript-eslint/eslint-plugin": "4.29.1",
+    "esbuild": "0.12.20",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "prettier": "2.3.2",
     "react": "17.0.2",
-    "standard": "16.0.3"
+    "typescript": "4.3.5"
   },
   "keywords": [
     "react",
