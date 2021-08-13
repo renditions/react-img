@@ -1,6 +1,6 @@
 import * as React from "react";
 import getSizes, { Breakpoint } from "@renditions/get-sizes";
-import getSrcset, { Rendition, sortRenditions } from "@renditions/get-srcset";
+import getSrcset, { sortRenditions } from "@renditions/get-srcset";
 
 export type { Breakpoint } from "@renditions/get-sizes";
 export type { Rendition } from "@renditions/get-srcset";
@@ -22,8 +22,8 @@ const Img = ({
   renditions: RenditionConfig[];
   size: string;
   breakpoints?: Breakpoint[];
-  autoSortRenditions: boolean;
-  autoSortBreakpoints: boolean;
+  autoSortRenditions?: boolean;
+  autoSortBreakpoints?: boolean;
 } & React.ImgHTMLAttributes<HTMLImageElement>) => {
   const renditions = renditionConfigs.map((rendition) => ({
     ...rendition,
