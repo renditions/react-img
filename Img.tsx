@@ -5,41 +5,43 @@ import getSrcset, { Rendition, sortRenditions } from "@renditions/get-srcset";
 export type { Breakpoint } from "@renditions/get-sizes";
 export type { Rendition } from "@renditions/get-srcset";
 
+export type RenditionConfig = {
+  width: number;
+};
+
 const Img = ({
   getSrc,
-  renditions,
+  renditions: renditionConfigs,
   size,
   breakpoints = [],
   autoSortRenditions = false,
   autoSortBreakpoints = false,
   ...rest
 }: {
-  getSrc: (rendition: Rendition) => string;
-  renditions: Rendition[];
+  getSrc: (rendition: RenditionConfig) => string;
+  renditions: RenditionConfig[];
   size: string;
   breakpoints?: Breakpoint[];
   autoSortRenditions: boolean;
   autoSortBreakpoints: boolean;
 } & React.ImgHTMLAttributes<HTMLImageElement>) => {
-  // create a copy of renditions array for in-place transforms
-  const renditionsConfig = renditions.slice(0);
+  const renditions = renditionConfigs.map((rendition) => ({
+    ...rendition,
+    src: getSrc(rendition),
+  }));
 
   if (autoSortRenditions) {
-    sortRenditions(renditionsConfig);
+    sortRenditions(renditions);
   }
 
-  renditionsConfig.forEach((rendition) => {
-    rendition.src = getSrc(rendition);
-  });
-
-  if (!renditionsConfig[0]) {
+  if (!renditions[0]) {
     throw new Error("Must provide at least 1 rendition.");
   }
 
   return (
     <img
-      src={getSrc(renditionsConfig[0])}
-      srcSet={getSrcset(renditionsConfig)}
+      src={getSrc(renditions[0])}
+      srcSet={getSrcset(renditions)}
       sizes={getSizes({ size, breakpoints }, autoSortBreakpoints)}
       {...rest}
     />
