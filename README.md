@@ -23,9 +23,9 @@ Define a renditions configuration:
 
 ```jsx
 const renditions = [
-  { width: '320' },
-  { width: '768' },
-  { width: '1280' }
+  { width: 320 },
+  { width: 768 },
+  { width: 1280 }
 ]
 ```
 
