@@ -9,7 +9,16 @@ export type RenditionConfig = {
   width: number;
 };
 
-const Img = ({
+const Img: React.FC<
+  {
+    getSrc: (rendition: RenditionConfig) => string;
+    renditions: RenditionConfig[];
+    size: string;
+    breakpoints?: Breakpoint[];
+    autoSortRenditions?: boolean;
+    autoSortBreakpoints?: boolean;
+  } & React.ImgHTMLAttributes<HTMLImageElement>
+> = ({
   getSrc,
   renditions: renditionConfigs,
   size,
@@ -17,14 +26,7 @@ const Img = ({
   autoSortRenditions = false,
   autoSortBreakpoints = false,
   ...rest
-}: {
-  getSrc: (rendition: RenditionConfig) => string;
-  renditions: RenditionConfig[];
-  size: string;
-  breakpoints?: Breakpoint[];
-  autoSortRenditions?: boolean;
-  autoSortBreakpoints?: boolean;
-} & React.ImgHTMLAttributes<HTMLImageElement>) => {
+}) => {
   const renditions = renditionConfigs.map((rendition) => ({
     ...rendition,
     src: getSrc(rendition),
